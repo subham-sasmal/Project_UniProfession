@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    tools:context=".Fragment_1_GreetingScreen">
+
+    <ImageView
+        android:id="@+id/imageView_GreetingVector"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/greeting_screen_vector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headingTop_Working"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:fontFamily="@font/poppins_bold"
+        android:letterSpacing="0.1"
+        android:text="Working"
+        android:textColor="@color/bluish_white"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_GreetingVector" />
+
+    <TextView
+        android:id="@+id/headingTop_On"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-2dp"
+        android:fontFamily="@font/poppins_bold"
+        android:letterSpacing="0.11"
+        android:text=" on"
+        android:textColor="@color/bluish_white"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="@+id/headingTop_Working"
+        app:layout_constraintStart_toEndOf="@+id/headingTop_Working"
+        app:layout_constraintTop_toTopOf="@+id/headingTop_Working" />
+
+    <TextView
+        android:id="@+id/headingBottom_Something"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
+        android:fontFamily="@font/poppins_bold"
+        android:letterSpacing="0.10"
+        android:text="Something?"
+        android:textColor="@color/bluish_white"
+        android:textSize="27sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headingTop_Working" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Get Projects reviewed by experts in the\n  Industry and progress in your career! "
+        android:textColor="@color/bluish_white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headingBottom_Something" />
+
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/btnLogin"
+        style="@style/Button_Appearance"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="-12dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="-12dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvDescription"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvDescription"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        app:neumorph_shapeAppearance="@style/Button_Appearance" />
+    <!--        android:text="LOGIN"-->
+    <!--        android:textSize="17sp"-->
+    <!--        android:fontFamily="@font/poppins_bold"-->
+    <!--        android:textColor="@color/bluish_white"-->
+
+    <TextView
+        android:id="@+id/btnLoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:textSize="17sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/bluish_white"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+        app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+
+    <LinearLayout
+        android:id="@+id/tvFirstTime_Registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin">
+
+        <TextView
+            android:id="@+id/tV_NewHere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:letterSpacing="0.06"
+            android:text="New Here?"
+            android:textColor="@color/bluish_white"
+            android:textSize="13sp" />
+
+
+        <TextView
+            android:id="@+id/tv_clickRegisterNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_bfdold"
+            android:letterSpacing="0.06"
+            android:text=" Register Now!"
+            android:textColor="@color/bluish_white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
