@@ -15,6 +15,7 @@ import org.w3c.dom.Text
 class Fragment_1_GreetingScreen : Fragment() {
 
     lateinit var login : Button
+    lateinit var registerNow : TextView
     lateinit var heading1 : TextView
 
     override fun onCreateView(
@@ -33,6 +34,15 @@ class Fragment_1_GreetingScreen : Fragment() {
             var loginText: TextView = findViewById(R.id.btnLoginText)
             textShader(loginText)
 
+            registerNow = findViewById(R.id.tv_clickRegisterNow)
+            registerNow.setOnClickListener {
+                parentFragmentManager.beginTransaction().apply {
+                    addToBackStack(null)
+                    setCustomAnimations(R.anim.slide_in,R.anim.fade_out)
+                    add(R.id.FragmentHolder,Fragment_2_1_RegistrationScreen()).commit()
+                }
+
+            }
 
         }
         return v
