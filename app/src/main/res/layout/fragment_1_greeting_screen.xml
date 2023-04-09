@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_login"
+    android:background="@drawable/background_universal"
     tools:context=".Fragment_1_GreetingScreen">
 
     <ImageView
@@ -90,10 +90,6 @@
         app:layout_constraintStart_toStartOf="@+id/tvDescription"
         app:layout_constraintTop_toBottomOf="@+id/tvDescription"
         app:neumorph_shapeAppearance="@style/Button_Appearance" />
-    <!--        android:text="LOGIN"-->
-    <!--        android:textSize="17sp"-->
-    <!--        android:fontFamily="@font/poppins_bold"-->
-    <!--        android:textColor="@color/bluish_white"-->
 
     <TextView
         android:id="@+id/btnLoginText"
@@ -136,15 +132,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:fontFamily="@font/poppins_bfdold"
+            android:fontFamily="@font/poppins_bold"
             android:letterSpacing="0.06"
             android:text=" Register Now!"
             android:textColor="@color/bluish_white"
             android:textSize="15sp" />
 
     </LinearLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

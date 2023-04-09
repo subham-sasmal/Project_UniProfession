@@ -9,4 +9,5 @@
     <color name="lime_green">#DDFF9C</color>
     <color name="bluish_white">#E7E4F1</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="et_hint">#8C131315</color>
 </resources>

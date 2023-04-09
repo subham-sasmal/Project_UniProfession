@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_universal"
+    tools:context=".Fragment_2_1_RegistrationScreen">
+
+
+    <ImageView
+        android:id="@+id/imageView_RegistrationPageVector"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/registration_screen_vector"
+        app:layout_constraintBottom_toTopOf="@+id/tcPrompt_ProfileCompleted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tcPrompt_ProfileCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Profile Completed : "
+        android:textColor="@color/bluish_white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@id/progressBar" />
+
+    <TextView
+        android:id="@+id/completion_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="0%"
+        android:textColor="@color/bluish_white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tcPrompt_ProfileCompleted"
+        app:layout_constraintStart_toEndOf="@+id/tcPrompt_ProfileCompleted"
+        app:layout_constraintTop_toTopOf="@+id/tcPrompt_ProfileCompleted" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        android:layout_marginBottom="25dp"
+        android:progressDrawable="@drawable/registration_progress_bar_background"
+        app:layout_constraintBottom_toTopOf="@+id/heading_Hey"
+        app:layout_constraintEnd_toEndOf="@id/imageView_RegistrationPageVector"
+        app:layout_constraintStart_toStartOf="@id/et_Name"
+         />
+
+    <TextView
+        android:id="@+id/heading_Hey"
+        style="@style/Login_Page_Heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-15dp"
+        android:text="Hey"
+        app:layout_constraintBottom_toTopOf="@+id/tv_Description"
+        app:layout_constraintStart_toStartOf="@+id/et_Name" />
+
+    <TextView
+        android:id="@+id/heading_There"
+        style="@style/Login_Page_Heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" There!"
+        app:layout_constraintBottom_toBottomOf="@+id/heading_Hey"
+        app:layout_constraintStart_toEndOf="@+id/heading_Hey"
+        app:layout_constraintTop_toTopOf="@+id/heading_Hey" />
+
+    <TextView
+        android:id="@+id/tv_Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Tell us a bit about yourself..."
+        android:textColor="@color/bluish_white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_Name"
+        app:layout_constraintStart_toStartOf="@+id/heading_Hey" />
+
+    <EditText
+        android:id="@+id/et_Name"
+        style="@style/EditText_Appearance"
+        android:layout_width="210dp"
+        android:layout_marginBottom="7dp"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/et_EmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/et_EmailAddress" />
+
+    <EditText
+        android:id="@+id/et_Surname"
+        style="@style/EditText_Appearance"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_marginStart="7dp"
+        android:paddingStart="0dp"
+        android:hint="Surname"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@id/et_Name"
+        app:layout_constraintBottom_toBottomOf="@+id/et_Name"
+        app:layout_constraintEnd_toEndOf="@+id/et_EmailAddress" />
+
+    <EditText
+        android:id="@+id/et_EmailAddress"
+        style="@style/EditText_Appearance"
+        android:layout_width="0dp"
+        android:layout_marginBottom="7dp"
+        android:hint="Email-ID"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/et_pass"
+        app:layout_constraintEnd_toEndOf="@+id/et_pass"
+        app:layout_constraintStart_toStartOf="@+id/et_pass" />
+
+    <EditText
+        android:id="@+id/et_pass"
+        style="@style/EditText_Appearance"
+        android:layout_width="0dp"
+        android:layout_marginBottom="7dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/et_confirm_pass"
+        app:layout_constraintEnd_toEndOf="@+id/et_confirm_pass"
+        app:layout_constraintStart_toStartOf="@+id/et_confirm_pass" />
+
+    <EditText
+        android:id="@+id/et_confirm_pass"
+        style="@style/EditText_Appearance"
+        android:layout_width="0dp"
+        android:layout_marginBottom="7dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/et_MobileNumber"
+        app:layout_constraintEnd_toEndOf="@+id/et_MobileNumber"
+        app:layout_constraintStart_toStartOf="@+id/mbt_mobileISD" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mbt_mobileISD"
+        style="@style/EditText_Appearance"
+        android:layout_width="60dp"
+        android:gravity="center"
+        android:paddingStart="0dp"
+        android:text="+91"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/et_hint"
+        app:layout_constraintBottom_toBottomOf="@+id/et_MobileNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="27dp" />
+
+    <EditText
+        android:id="@+id/et_MobileNumber"
+        style="@style/EditText_Appearance"
+        android:layout_width="0dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Mobile Number"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/actionButtons_constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mbt_mobileISD" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/actionButtons_constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="#FFA7B3"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:textSize="15sp"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/btn_Next"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/btn_Next"
+            style="@style/Button_Appearance"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-11dp"
+            android:layout_marginBottom="-11dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_Cancel"
+            app:neumorph_shapeAppearance="@style/Button_Appearance"
+            tools:layout_editor_absoluteY="-9dp" />
+
+        <TextView
+            android:id="@+id/btn_Next_Txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/bluish_white"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_Next"
+            app:layout_constraintEnd_toEndOf="@+id/btn_Next"
+            app:layout_constraintStart_toStartOf="@id/btn_Next"
+            app:layout_constraintTop_toTopOf="@+id/btn_Next" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
