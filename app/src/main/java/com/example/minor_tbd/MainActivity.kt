@@ -8,7 +8,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportFragmentManager.beginTransaction().apply {
-            addToBackStack(null)
             add(R.id.FragmentHolder,Fragment_1_GreetingScreen()).commit()
         }
     }

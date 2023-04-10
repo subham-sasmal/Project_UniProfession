@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_universal"
+    tools:context=".Fragment_2_2_LoginPage">
+
+    <ImageView
+        android:id="@+id/imageView_LoginPage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/login_screen_vector"
+        app:layout_constraintBottom_toTopOf="@+id/textView_WelcomeBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView_WelcomeBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:letterSpacing="0.1"
+        android:text="Welcome Back!"
+        android:layout_marginBottom="-16dp"
+        android:textColor="@color/bluish_white"
+        android:textSize="31sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView_login"
+        app:layout_constraintStart_toStartOf="@+id/textView_login" />
+
+    <TextView
+        android:id="@+id/textView_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="LOGIN"
+        android:textColor="@color/lime_green"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintStart_toStartOf="@+id/editText2" />
+
+    <TextView
+        android:id="@+id/texView_resume_journey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" to resume your journey"
+        android:textColor="@color/bluish_white"
+        android:textSize="20dp"
+        android:paddingBottom="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_login"
+        app:layout_constraintStart_toEndOf="@+id/textView_login"
+        app:layout_constraintTop_toTopOf="@+id/textView_login" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="0dp"
+        style="@style/EditText_Appearance"
+        android:layout_marginBottom="7dp"
+        android:hint="Enter email-id"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/et_password"
+        app:layout_constraintEnd_toEndOf="@+id/et_password"
+        app:layout_constraintStart_toStartOf="@+id/et_password" />
+
+    <EditText
+        android:id="@+id/et_password"
+        style="@style/EditText_Appearance"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="12dp"
+        android:hint="Enter password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/btnLogin"
+        style="@style/Button_Appearance"
+        android:layout_width="0dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="-12dp"
+        android:layout_marginEnd="-12dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/et_password"
+        app:layout_constraintStart_toStartOf="@+id/et_password"
+        app:neumorph_shapeAppearance="@style/Button_Appearance" />
+
+    <TextView
+        android:id="@+id/textView_log_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="LOG-IN"
+        android:textColor="@color/lime_green"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+        app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="end"
+            android:text="Forgot Password?"
+            android:textColor="@color/bluish_white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+        <TextView
+            android:id="@+id/textView_click_here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="CLICK HERE"
+            android:textColor="@color/lime_green"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
