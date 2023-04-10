@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import org.w3c.dom.Text
 
 class Fragment_1_GreetingScreen : Fragment() {
 
@@ -48,15 +47,15 @@ class Fragment_1_GreetingScreen : Fragment() {
         return v
     }
 
-    fun textShader(text : TextView)
+    fun textShader(txtGradient : TextView)
     {
-        val paint = text.paint
-        val width = paint.measureText(text.text.toString())
-        val textShader: Shader = LinearGradient(0f, 0f, width, text.textSize, intArrayOf(
+        val paint = txtGradient.paint
+        val width = paint.measureText(txtGradient.text.toString())
+        val textShader: Shader = LinearGradient(0f, 0f, width, txtGradient.textSize, intArrayOf(
             Color.parseColor("#9CF877"),
             Color.parseColor("#DDFF9C"),
         ), null, Shader.TileMode.REPEAT)
-        text.paint.setShader(textShader)
+        txtGradient.paint.setShader(textShader)
     }
 
 
