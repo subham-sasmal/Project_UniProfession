@@ -68,7 +68,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_Description"
         app:layout_constraintStart_toStartOf="@+id/et_Name" />
 
-    <TextView
+       <TextView
         android:id="@+id/heading_There"
         style="@style/Login_Page_Heading"
         android:layout_width="wrap_content"
@@ -184,7 +184,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/btn_Cancel"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -192,6 +192,7 @@
             android:text="Cancel"
             android:textAllCaps="false"
             android:textColor="#FFA7B3"
+            android:clickable="true"
             android:fontFamily="@font/poppins_semi_bold"
             android:textSize="15sp"
             android:gravity="center"
@@ -206,6 +207,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="-11dp"
             android:layout_marginBottom="-11dp"
+            tools:text="Next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btn_Cancel"
