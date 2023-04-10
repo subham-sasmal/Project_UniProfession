@@ -32,11 +32,11 @@
         android:layout_marginBottom="-16dp"
         android:textColor="@color/bluish_white"
         android:textSize="31sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView_login"
-        app:layout_constraintStart_toStartOf="@+id/textView_login" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_Login"
+        app:layout_constraintStart_toStartOf="@+id/tv_Login" />
 
     <TextView
-        android:id="@+id/textView_login"
+        android:id="@+id/tv_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="17dp"
@@ -55,9 +55,9 @@
         android:textColor="@color/bluish_white"
         android:textSize="20dp"
         android:paddingBottom="6dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_login"
-        app:layout_constraintStart_toEndOf="@+id/textView_login"
-        app:layout_constraintTop_toTopOf="@+id/textView_login" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Login"
+        app:layout_constraintStart_toEndOf="@+id/tv_Login"
+        app:layout_constraintTop_toTopOf="@+id/tv_Login" />
 
     <EditText
         android:id="@+id/editText2"
@@ -96,11 +96,11 @@
         app:neumorph_shapeAppearance="@style/Button_Appearance" />
 
     <TextView
-        android:id="@+id/textView_log_in"
+        android:id="@+id/tv_loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
-        android:text="LOG-IN"
+        android:text="LOGIN"
         android:textColor="@color/lime_green"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnLogin"
@@ -134,7 +134,7 @@
             app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
         <TextView
-            android:id="@+id/textView_click_here"
+            android:id="@+id/tv_clickHereButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"

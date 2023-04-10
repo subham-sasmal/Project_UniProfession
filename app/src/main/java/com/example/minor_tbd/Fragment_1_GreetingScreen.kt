@@ -10,10 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import soup.neumorphism.NeumorphButton
 
 class Fragment_1_GreetingScreen : Fragment() {
 
-    lateinit var login : Button
     lateinit var registerNow : TextView
     lateinit var heading1 : TextView
 
@@ -32,6 +32,16 @@ class Fragment_1_GreetingScreen : Fragment() {
 
             var loginText: TextView = findViewById(R.id.btnLoginText)
             textShader(loginText)
+
+            var btnLogin = findViewById<NeumorphButton>(R.id.btnLogin)
+
+            btnLogin.setOnClickListener {
+                parentFragmentManager.beginTransaction().apply {
+                    addToBackStack(null)
+                    setCustomAnimations(R.anim.slide_in,R.anim.fade_out)
+                    add(R.id.FragmentHolder,Fragment_2_2_LoginPage()).commit()
+                }
+            }
 
             registerNow = findViewById(R.id.tv_clickRegisterNow)
             registerNow.setOnClickListener {
