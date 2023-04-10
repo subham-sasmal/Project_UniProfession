@@ -11,7 +11,13 @@
         <item name="neumorph_shadowColorDark">#0F0F10</item>
         <item name="neumorph_backgroundColor">@color/onyx_btn_black</item>
     </style>
-    
+
+    <style name="Login_Page_Heading">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">31sp</item>
+        <item name="android:textColor">@color/bluish_white</item>
+    </style>
+
     <style name="EditText_Appearance">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">53dp</item>

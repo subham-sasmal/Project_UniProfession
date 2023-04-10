@@ -91,10 +91,6 @@
         app:layout_constraintStart_toStartOf="@+id/tvDescription"
         app:layout_constraintTop_toBottomOf="@+id/tvDescription"
         app:neumorph_shapeAppearance="@style/Button_Appearance" />
-    <!--        android:text="LOGIN"-->
-    <!--        android:textSize="17sp"-->
-    <!--        android:fontFamily="@font/poppins_bold"-->
-    <!--        android:textColor="@color/bluish_white"-->
 
     <TextView
         android:id="@+id/btnLoginText"
@@ -144,8 +140,5 @@
             android:textSize="15sp" />
 
     </LinearLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
