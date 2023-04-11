@@ -1,5 +1,6 @@
 package com.example.minor_tbd
 
+import android.app.FragmentManager
 import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
@@ -29,8 +30,8 @@ class Fragment_2_1_RegistrationScreen : Fragment() {
 
             var btn_cancel = findViewById<Button>(R.id.btn_Cancel)
             btn_cancel.setOnClickListener {
+                parentFragmentManager.popBackStack()
                 parentFragmentManager.beginTransaction().apply {
-                    setCustomAnimations(R.anim.slide_out,R.anim.slide_out)
                     remove(this@Fragment_2_1_RegistrationScreen)
                     commit()
                 }

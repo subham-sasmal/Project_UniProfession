@@ -14,7 +14,6 @@ import soup.neumorphism.NeumorphButton
 
 class Fragment_1_GreetingScreen : Fragment() {
 
-    lateinit var registerNow : TextView
     lateinit var heading1 : TextView
 
     override fun onCreateView(
@@ -24,6 +23,9 @@ class Fragment_1_GreetingScreen : Fragment() {
         // Inflate the layout for this fragment
         var v:View =  inflater.inflate(R.layout.fragment_1_greeting_screen, container, false)
         v.apply {
+
+            var fragmentManager = parentFragmentManager
+
             heading1 = findViewById(R.id.headingTop_Working)
             textShader(heading1)
 
@@ -36,19 +38,18 @@ class Fragment_1_GreetingScreen : Fragment() {
             var btnLogin = findViewById<NeumorphButton>(R.id.btnLogin)
 
             btnLogin.setOnClickListener {
-                parentFragmentManager.beginTransaction().apply {
-                    addToBackStack(null)
-                    setCustomAnimations(R.anim.slide_in,R.anim.fade_out)
-                    add(R.id.FragmentHolder,Fragment_2_2_LoginPage()).commit()
+                fragmentManager.beginTransaction().apply {
+                    addToBackStack("Login")
+                    setCustomAnimations(R.anim.slide_in,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out)
+                    replace(R.id.FragmentHolder,Fragment_2_2_LoginPage()).commit()
                 }
             }
 
-            registerNow = findViewById(R.id.tv_clickRegisterNow)
-            registerNow.setOnClickListener {
-                parentFragmentManager.beginTransaction().apply {
-                    addToBackStack(null)
-                    setCustomAnimations(R.anim.slide_in,R.anim.fade_out)
-                    add(R.id.FragmentHolder,Fragment_2_1_RegistrationScreen()).commit()
+            clickRegisterNow.setOnClickListener {
+                fragmentManager.beginTransaction().apply {
+                    addToBackStack("RegisterNow")
+                    setCustomAnimations(R.anim.slide_in,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out)
+                    replace(R.id.FragmentHolder,Fragment_2_1_RegistrationScreen()).commit()
                 }
 
             }
