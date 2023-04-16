@@ -1,14 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_universal"
     tools:context=".Fragment_2_1_1_RegistrationScreen_StudentOrPro">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/imageView_RegistrationPageVector"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/registration_screen_vector"
+        app:layout_constraintBottom_toTopOf="@+id/tcPrompt_ProfileCompleted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tcPrompt_ProfileCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Profile Completed : "
+        android:textColor="@color/bluish_white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/completion_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="0%"
+        android:textColor="@color/bluish_white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tcPrompt_ProfileCompleted"
+        app:layout_constraintStart_toEndOf="@+id/tcPrompt_ProfileCompleted"
+        app:layout_constraintTop_toTopOf="@+id/tcPrompt_ProfileCompleted" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        android:layout_marginBottom="25dp"
+        android:progressDrawable="@drawable/registration_progress_bar_background"
+        app:layout_constraintBottom_toTopOf="@+id/tv_HeadingARE"
+        app:layout_constraintEnd_toEndOf="@+id/FragmentHolder_StudentOrPro"
+        app:layout_constraintStart_toStartOf="@+id/tv_HeadingARE" />
+
+    <TextView
+        android:id="@+id/tv_HeadingARE"
+        style="@style/Login_Page_Heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are"
+        android:layout_marginStart="2dp"
+        tools:textColor="@color/lime_green"
+        android:layout_marginBottom="-7dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Student"
+        app:layout_constraintStart_toStartOf="@+id/FragmentHolder_StudentOrPro" />
+
+    <TextView
+        style="@style/Login_Page_Heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" you a..."
+        app:layout_constraintBottom_toBottomOf="@+id/tv_HeadingARE"
+        app:layout_constraintStart_toEndOf="@+id/tv_HeadingARE"
+        app:layout_constraintTop_toTopOf="@+id/tv_HeadingARE" />
+
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/btn_Student"
+        style="@style/Button_Appearance"
+        app:neumorph_shapeAppearance="@style/Button_Appearance"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:text = "Student"
+        android:textColor="@color/bluish_white"
+        android:textSize="15sp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toTopOf="@id/FragmentHolder_StudentOrPro"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Professional"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/btn_Professional"
+        style="@style/Button_Appearance"
+        app:neumorph_shapeAppearance="@style/Button_Appearance"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="17dp"
+        android:text="Professional"
+        android:textSize="15sp"
+        android:textColor="@color/bluish_white"
+        android:fontFamily="@font/poppins_medium"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@id/btn_Student"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_Student" />
+
+    <FrameLayout
+        android:id="@+id/FragmentHolder_StudentOrPro"
+        android:layout_width="0dp"
+        android:layout_height="233dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/actionButtons_constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/actionButtons_constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_Cancel"
+            style="@style/cancel_Button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_Next"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/btn_Next"
+            style="@style/Button_Appearance"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-11dp"
+            android:layout_marginBottom="-11dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_Cancel"
+            app:neumorph_shapeAppearance="@style/Button_Appearance"
+            tools:layout_editor_absoluteY="-9dp"
+            tools:text="Next" />
+
+        <TextView
+            android:id="@+id/tv_btnNxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            tools:textColor="@color/lime_green"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_Next"
+            app:layout_constraintEnd_toEndOf="@+id/btn_Next"
+            app:layout_constraintStart_toStartOf="@id/btn_Next"
+            app:layout_constraintTop_toTopOf="@+id/btn_Next" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
