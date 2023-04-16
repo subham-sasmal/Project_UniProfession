@@ -2,17 +2,4 @@
     <string name="app_name">Minor_TBD</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <string-array name="domain_list">
-        <item>Android App Development</item>
-        <item>Artificial Intelligence</item>
-        <item>Android App Development</item>
-        <item>Android App Development</item>
-        <item>Android App Development</item>
-        <item>Android App Development</item>
-        <item>Android App Development</item>
-        <item>Android App Development</item>
-        <item>Android App Development</item>
-        <item>Android App Development</item>
-    </string-array>
 </resources>

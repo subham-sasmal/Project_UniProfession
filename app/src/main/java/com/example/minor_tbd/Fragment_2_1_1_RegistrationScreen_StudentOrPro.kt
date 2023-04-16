@@ -1,8 +1,6 @@
 package com.example.minor_tbd
 
 import android.graphics.Color
-import android.graphics.LinearGradient
-import android.graphics.Shader
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,10 +15,7 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
 
     //Variable to store TextView Objects
     lateinit var tv_HeadingARE: TextView
-    lateinit var tv_btnStudent: TextView
-    lateinit var tv_btnProfessional: TextView
     lateinit var tv_btnNext: TextView
-
     lateinit var btn_Student: NeumorphButton
     lateinit var btn_Professional: NeumorphButton
     lateinit var btn_cancel: Button
@@ -30,6 +25,9 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        var checkProfessionalFragmentClicked = true
+        var checkStudentFragmentClicked = true
+
         // Inflate the layout for this fragment
         var v = inflater.inflate(R.layout.fragment_2_1_1_registration_screen_student_or_pro, container,false)
         v.apply {
@@ -50,7 +48,11 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
                 btn_Professional.setTextColor(ContextCompat.getColor(context,R.color.bluish_white))
 
                 //call the student editText fragment
-
+                if(checkStudentFragmentClicked)
+                {
+                    checkStudentFragmentClicked = false
+                    checkProfessionalFragmentClicked = true
+                }
             }
 
             btn_Professional.setOnClickListener {
@@ -60,6 +62,16 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
                 btn_Student.setTextColor(ContextCompat.getColor(context,R.color.bluish_white))
 
                 //call the professional editText fragment
+                if (checkProfessionalFragmentClicked)
+                {
+                    parentFragmentManager.beginTransaction().apply {
+                        setCustomAnimations(R.anim.slide_in,R.anim.slide_out)
+                        replace(R.id.FragmentHolder_StudentOrPro,Fragment_Professional_Entry_Details())
+                        commit()
+                    }
+                    checkProfessionalFragmentClicked = false
+                    checkStudentFragmentClicked = true
+                }
 
             }
 
@@ -71,6 +83,8 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
                     commit()
                 }
             }
+
+
 
         }
         return v

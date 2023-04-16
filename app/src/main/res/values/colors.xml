@@ -9,5 +9,6 @@
     <color name="lime_green">#DDFF9C</color>
     <color name="bluish_white">#E7E4F1</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="et_hint">#8C131315</color>
+    <color name="et_hint">#8C4A4A4A</color>
+    <color name="spinner_dropdown_hint">#8C2A2A2C</color>
 </resources>
