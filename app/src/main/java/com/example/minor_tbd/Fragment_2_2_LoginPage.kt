@@ -13,30 +13,23 @@ import android.widget.TextView
 
 class Fragment_2_2_LoginPage : Fragment() {
 
+    lateinit var tvLogin: TextView
+    lateinit var tvLoginButton: TextView
+    lateinit var tvClickHereButton: TextView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         var v =  inflater.inflate(R.layout.fragment_2_2_login_page, container, false)
         v.apply {
-            var tvLogin = findViewById<TextView>(R.id.tv_Login)
-            var tvLoginButton = findViewById<TextView>(R.id.tv_loginButton)
-            var tvClickHereButton = findViewById<TextView>(R.id.tv_clickHereButton)
-            textShader(tvLogin)
-            textShader(tvLoginButton)
-            textShader(tvClickHereButton)
+            tvLogin = findViewById(R.id.tv_Login)
+            tvLoginButton = findViewById(R.id.tv_loginButton)
+            tvClickHereButton = findViewById(R.id.tv_clickHereButton)
+
+            var tv_gradient = mutableListOf(tvLogin,tvLoginButton,tvClickHereButton)
+            MainActivity.textShader(tv_gradient)
         }
         return v
-    }
-
-    fun textShader(txtGradient : TextView)
-    {
-        val paint = txtGradient.paint
-        val width = paint.measureText(txtGradient.text.toString())
-        val textShader: Shader = LinearGradient(0f, 0f, width, txtGradient.textSize, intArrayOf(
-            Color.parseColor("#9CF877"),
-            Color.parseColor("#DDFF9C"),
-        ), null, Shader.TileMode.REPEAT)
-        txtGradient.paint.setShader(textShader)
     }
 }

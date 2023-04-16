@@ -15,6 +15,9 @@ import soup.neumorphism.NeumorphButton
 class Fragment_1_GreetingScreen : Fragment() {
 
     lateinit var heading1 : TextView
+    lateinit var clickRegisterNow: TextView
+    lateinit var loginText: TextView
+    lateinit var btnLogin: NeumorphButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,21 +27,17 @@ class Fragment_1_GreetingScreen : Fragment() {
         var v:View =  inflater.inflate(R.layout.fragment_1_greeting_screen, container, false)
         v.apply {
 
-            var fragmentManager = parentFragmentManager
-
             heading1 = findViewById(R.id.headingTop_Working)
-            textShader(heading1)
+            clickRegisterNow = findViewById(R.id.tv_clickRegisterNow)
+            loginText = findViewById(R.id.btnLoginText)
 
-            var clickRegisterNow : TextView = findViewById(R.id.tv_clickRegisterNow)
-            textShader(clickRegisterNow)
+            var tv_gradient = mutableListOf(heading1,clickRegisterNow,loginText)
+            MainActivity.textShader(tv_gradient)
 
-            var loginText: TextView = findViewById(R.id.btnLoginText)
-            textShader(loginText)
-
-            var btnLogin = findViewById<NeumorphButton>(R.id.btnLogin)
+            btnLogin = findViewById(R.id.btnLogin)
 
             btnLogin.setOnClickListener {
-                fragmentManager.beginTransaction().apply {
+                parentFragmentManager.beginTransaction().apply {
                     addToBackStack("Login")
                     setCustomAnimations(R.anim.slide_in,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out)
                     replace(R.id.FragmentHolder,Fragment_2_2_LoginPage()).commit()
@@ -46,7 +45,7 @@ class Fragment_1_GreetingScreen : Fragment() {
             }
 
             clickRegisterNow.setOnClickListener {
-                fragmentManager.beginTransaction().apply {
+                parentFragmentManager.beginTransaction().apply {
                     addToBackStack("RegisterNow")
                     setCustomAnimations(R.anim.slide_in,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out)
                     replace(R.id.FragmentHolder,Fragment_2_1_RegistrationScreen()).commit()
@@ -57,17 +56,5 @@ class Fragment_1_GreetingScreen : Fragment() {
         }
         return v
     }
-
-    fun textShader(txtGradient : TextView)
-    {
-        val paint = txtGradient.paint
-        val width = paint.measureText(txtGradient.text.toString())
-        val textShader: Shader = LinearGradient(0f, 0f, width, txtGradient.textSize, intArrayOf(
-            Color.parseColor("#9CF877"),
-            Color.parseColor("#DDFF9C"),
-        ), null, Shader.TileMode.REPEAT)
-        txtGradient.paint.setShader(textShader)
-    }
-
 
 }

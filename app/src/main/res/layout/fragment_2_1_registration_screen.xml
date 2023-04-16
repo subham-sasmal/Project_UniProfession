@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_universal"
+    android:fitsSystemWindows="true"
     tools:context=".Fragment_2_1_RegistrationScreen">
 
 
@@ -65,6 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="-15dp"
         android:text="Hey"
+        tools:textColor="@color/lime_green"
         app:layout_constraintBottom_toTopOf="@+id/tv_Description"
         app:layout_constraintStart_toStartOf="@+id/et_Name" />
 
@@ -166,7 +168,7 @@
         android:layout_marginStart="7dp"
         android:layout_marginBottom="30dp"
         android:layout_marginEnd="30dp"
-        android:hint="Mobile Number"
+        android:hint="Contact Number"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/actionButtons_constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -208,13 +210,13 @@
             tools:layout_editor_absoluteY="-9dp" />
 
         <TextView
-            android:id="@+id/btn_Next_Txt"
+            android:id="@+id/tv_btnNxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next"
             android:textSize="18sp"
             android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/bluish_white"
+            tools:textColor="@color/lime_green"
             app:layout_constraintBottom_toBottomOf="@+id/btn_Next"
             app:layout_constraintEnd_toEndOf="@+id/btn_Next"
             app:layout_constraintStart_toStartOf="@id/btn_Next"

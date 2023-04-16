@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Fragment_Professional_Entry_Details">
+
+    <EditText
+        android:id="@+id/et_currentCompany"
+        style="@style/EditText_Appearance"
+        android:layout_width="0dp"
+        android:hint="Current Company"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_domain"
+        style="@style/EditText_Appearance"
+        android:layout_width="0dp"
+        android:layout_marginTop="7dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_currentCompany" />
+
+
+    <View
+        android:layout_width="16dp"
+        android:layout_height="8dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:background="@drawable/login_et_background"
+        android:foreground="@drawable/spinner_down_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_domain"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_domain"
+        app:layout_constraintTop_toTopOf="@+id/spinner_domain" />
+
+
+    <EditText
+        android:id="@+id/et_Experience"
+        style="@style/EditText_Appearance"
+        android:layout_width="0dp"
+        android:hint="Current Company"
+        android:inputType="textPersonName"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_domain" />
+
+
+    <EditText
+        android:id="@+id/et_PassoutYear"
+        style="@style/EditText_Appearance"
+        android:layout_width="0dp"
+        android:hint="Passout Year"
+        android:inputType="textPersonName"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_Experience" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
