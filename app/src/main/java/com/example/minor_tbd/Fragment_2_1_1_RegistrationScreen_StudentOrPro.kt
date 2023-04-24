@@ -50,6 +50,9 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
                 //call the student editText fragment
                 if(checkStudentFragmentClicked)
                 {
+                    parentFragmentManager.beginTransaction().apply {
+                        replace(R.id.FragmentHolder_StudentOrPro, Fragment_Student_Entry_Details()).commit()
+                    }
                     checkStudentFragmentClicked = false
                     checkProfessionalFragmentClicked = true
                 }
