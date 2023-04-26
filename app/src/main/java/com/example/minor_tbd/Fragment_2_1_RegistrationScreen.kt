@@ -57,7 +57,7 @@ class Fragment_2_1_RegistrationScreen : Fragment() {
                 else if(et_confirmPass.text.toString()=="")
                     Toast.makeText(context,"Confirm your password",Toast.LENGTH_SHORT).show()
                 else if(et_MobNo.text.toString()=="" || et_MobNo.text.toString().length != 10)
-                    Toast.makeText(context,"Conrtact field empty or Invalid contact number entered",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context,"Contact field empty or Invalid contact number entered",Toast.LENGTH_SHORT).show()
                 else if(!(et_confirmPass.text.toString().equals(et_Pass.text.toString())))
                     Toast.makeText(context,"Wrong Password entered",Toast.LENGTH_SHORT).show()
                 else

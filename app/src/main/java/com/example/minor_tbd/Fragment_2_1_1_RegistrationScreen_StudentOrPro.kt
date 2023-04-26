@@ -19,6 +19,7 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
     lateinit var btn_Student: NeumorphButton
     lateinit var btn_Professional: NeumorphButton
     lateinit var btn_cancel: Button
+    lateinit var btn_next: NeumorphButton
 
     //Variable to store Button objects
     override fun onCreateView(
@@ -43,7 +44,7 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
             //Following Buttons will execute certain actions on click.
             btn_Student.setOnClickListener {
                 btn_Student.setShapeType(1) //1 stands for pressed state of the button. 0 is flat and 2 is basin
-                btn_Student.setTextColor(Color.parseColor("#BDFC8A"))
+                btn_Student.setTextColor(ContextCompat.getColor(context, R.color.gradient_green))
                 btn_Professional.setShapeType(0)
                 btn_Professional.setTextColor(ContextCompat.getColor(context,R.color.bluish_white))
 
@@ -78,6 +79,15 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
 
             }
 
+            btn_next = findViewById(R.id.btn_Next)
+            btn_next.setOnClickListener() {
+                parentFragmentManager.beginTransaction().apply {
+                    addToBackStack("Select_Interests")
+                    setCustomAnimations(R.anim.slide_in,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out)
+                    replace(R.id.FragmentHolder, Fragment_Student_Interest()).commit()
+                }
+            }
+
             btn_cancel = findViewById(R.id.btn_Cancel)
             btn_cancel.setOnClickListener {
                 parentFragmentManager.popBackStack()
@@ -86,10 +96,8 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
                     commit()
                 }
             }
-
-
-
         }
+
         return v
     }
 }

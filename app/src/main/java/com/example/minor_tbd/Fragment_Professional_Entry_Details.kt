@@ -24,6 +24,7 @@ class Fragment_Professional_Entry_Details : Fragment() {
             adapter.setDropDownViewResource(R.layout.spinner_dropdown_bg)
             spinner_domain = findViewById(R.id.spinner_domain)
             spinner_domain.adapter = adapter
+
         }
         return v
     }
