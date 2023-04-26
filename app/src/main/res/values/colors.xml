@@ -11,4 +11,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="et_hint">#8C4A4A4A</color>
     <color name="spinner_dropdown_hint">#8C2A2A2C</color>
+    <color name="interest_default_state_color">#B8B8B8</color>
+    <color name="gradient_green">#BDFC8A</color>
 </resources>
+
