@@ -51,7 +51,9 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
                 if(checkStudentFragmentClicked)
                 {
                     parentFragmentManager.beginTransaction().apply {
-                        replace(R.id.FragmentHolder_StudentOrPro, Fragment_Student_Entry_Details()).commit()
+                        setCustomAnimations(R.anim.slide_in_from_left,R.anim.fade_out)
+                        replace(R.id.FragmentHolder_StudentOrPro, Fragment_Student_Entry_Details())
+                        commit()
                     }
                     checkStudentFragmentClicked = false
                     checkProfessionalFragmentClicked = true
@@ -68,7 +70,7 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
                 if (checkProfessionalFragmentClicked)
                 {
                     parentFragmentManager.beginTransaction().apply {
-                        setCustomAnimations(R.anim.slide_in,R.anim.slide_out)
+                        setCustomAnimations(R.anim.slide_in_from_right,R.anim.fade_out)
                         replace(R.id.FragmentHolder_StudentOrPro,Fragment_Professional_Entry_Details())
                         commit()
                     }

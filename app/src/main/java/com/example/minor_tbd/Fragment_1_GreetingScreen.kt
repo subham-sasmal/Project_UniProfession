@@ -1,14 +1,10 @@
 package com.example.minor_tbd
 
-import android.graphics.Color
-import android.graphics.LinearGradient
-import android.graphics.Shader
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import soup.neumorphism.NeumorphButton
 
@@ -39,7 +35,7 @@ class Fragment_1_GreetingScreen : Fragment() {
             btnLogin.setOnClickListener {
                 parentFragmentManager.beginTransaction().apply {
                     addToBackStack("Login")
-                    setCustomAnimations(R.anim.slide_in,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out)
+                    setCustomAnimations(R.anim.slide_in_from_right,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out_from_left)
                     replace(R.id.FragmentHolder,Fragment_2_2_LoginPage()).commit()
                 }
             }
@@ -47,7 +43,7 @@ class Fragment_1_GreetingScreen : Fragment() {
             clickRegisterNow.setOnClickListener {
                 parentFragmentManager.beginTransaction().apply {
                     addToBackStack("RegisterNow")
-                    setCustomAnimations(R.anim.slide_in,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out)
+                    setCustomAnimations(R.anim.slide_in_from_right,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out_from_left)
                     replace(R.id.FragmentHolder,Fragment_2_1_RegistrationScreen()).commit()
                 }
 

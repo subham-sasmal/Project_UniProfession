@@ -29,7 +29,7 @@ class Fragment_Student_Entry_Details : Fragment() {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment__student__entry__details, container, false)
 
-        val courses_list = mutableListOf<String>("Courses" , "B.tech/BE",  "BCA", "B.tech+M.tech" , "M.tech", "Phd")
+        val courses_list = mutableListOf<String>("Courses" , "B.Tech/BE", "B.Sc", "BCA" , "M.Tech", "Phd")
 
         val branch_list = mutableListOf<String>("Branch" , "CSE", "IT", "Mechanical" , "Electrical" , "Civil")
         v.apply {
