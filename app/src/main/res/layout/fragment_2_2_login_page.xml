@@ -85,7 +85,7 @@
 
     <soup.neumorphism.NeumorphButton
         android:id="@+id/btnLogin"
-        style="@style/Button_Appearance"
+        style="@style/Navigation_Button_Appearance"
         android:layout_width="0dp"
         android:layout_height="78dp"
         android:layout_marginStart="-12dp"
@@ -93,7 +93,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="@+id/et_password"
         app:layout_constraintStart_toStartOf="@+id/et_password"
-        app:neumorph_shapeAppearance="@style/Button_Appearance" />
+        app:neumorph_shapeAppearance="@style/Navigation_Button_Appearance" />
 
     <TextView
         android:id="@+id/tv_loginButton"
