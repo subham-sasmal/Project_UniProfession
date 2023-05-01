@@ -85,7 +85,7 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
             btn_next.setOnClickListener() {
                 parentFragmentManager.beginTransaction().apply {
                     addToBackStack("Select_Interests")
-                    setCustomAnimations(R.anim.slide_in,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out)
+                    setCustomAnimations(R.anim.slide_in_from_right,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out_from_left)
                     replace(R.id.FragmentHolder, Fragment_Student_Interest()).commit()
                 }
             }

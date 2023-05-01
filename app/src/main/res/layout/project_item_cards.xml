@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="420dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="40dp"
+    android:background="@drawable/project_item_cards_bg">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_profilePic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/rounded_image_view" />
+
+    <TextView
+        android:id="@+id/tv_profileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Matt Stones"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/bluish_white"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_profilePic"
+        app:layout_constraintTop_toTopOf="@+id/iv_profilePic" />
+
+    <TextView
+        android:id="@+id/tv_uploadTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10 mins ago"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="#9E9DA0"
+        android:layout_marginTop="-12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_profilePic"
+        app:layout_constraintStart_toStartOf="@+id/tv_profileName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profileName" />
+
+    <View
+        android:id="@+id/bookmark"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/bookmark"
+        app:layout_constraintBottom_toTopOf="@+id/iv_bannerPic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_bannerPic"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/web_dev"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profilePic"
+        app:shapeAppearanceOverlay="@style/custom_shape_imageView" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/blur_text_bg"
+        android:layout_width="0dp"
+        android:layout_height="170dp"
+        android:background="@drawable/project_item_cards_blur_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_bannerPic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <TextView
+            android:id="@+id/tv_projectTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="E-Commerce Website"
+            android:textColor="@color/lime_green"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_projectDescription"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="An e-commerce website that for selling sports goods"
+            android:textColor="@color/bluish_white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_projectTitle"
+            app:layout_constraintTop_toBottomOf="@id/tv_projectTitle" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout_TagHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-3dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tv_projectDescription">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#MERN"
+                style="@style/itemCards_tags"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#Web Development"
+                style="@style/itemCards_tags"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/project_item_card_divider"
+            android:layout_marginTop="-8dp"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_TagHolder"
+            tools:layout_editor_absoluteX="12dp" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/viewPager"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_TechStackHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    style="@style/techStack_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mongo DB" />
+
+                <TextView
+                    style="@style/techStack_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Express" />
+
+                <TextView
+                    style="@style/techStack_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="React" />
+
+                <TextView
+                    style="@style/techStack_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Node" />
+            </LinearLayout>
+
+        </ScrollView>
+
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="27dp"
+            android:background="@drawable/info"
+            app:layout_constraintBottom_toBottomOf="@id/scrollView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/scrollView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

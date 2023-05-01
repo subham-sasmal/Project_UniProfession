@@ -13,5 +13,6 @@
     <color name="spinner_dropdown_hint">#8C2A2A2C</color>
     <color name="interest_default_state_color">#B8B8B8</color>
     <color name="gradient_green">#BDFC8A</color>
+    <color name="grey">#2F2F35</color>
 </resources>
 

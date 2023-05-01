@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_universal"
+    tools:context=".Fragment_MainScreen">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/main_feed_top_bar_bg"
+        android:elevation="50dp"
+        android:outlineSpotShadowColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:elevation="50dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/app_name"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        tools:textColor="@color/lime_green" />
+
+    <soup.neumorphism.NeumorphImageButton
+        style="@style/Action_button_Appearance"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="-8dp"
+        android:elevation="50dp"
+        android:scaleType="center"
+        android:src="@drawable/search_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/neumorphButton"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <soup.neumorphism.NeumorphImageButton
+        android:id="@+id/neumorphButton"
+        style="@style/Action_button_Appearance"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="50dp"
+        android:scaleType="center"
+        android:src="@drawable/notification_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:background="@drawable/bottom_navbar_bg"
+        android:elevation="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:elevation="50dp"
+        android:background="@drawable/icon_home"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintBottom_toBottomOf="@id/view2"
+        app:layout_constraintStart_toStartOf="@id/view2"
+        app:layout_constraintEnd_toStartOf="@id/view4"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:elevation="50dp"
+        android:background="@drawable/leaderboard_deselected"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintBottom_toBottomOf="@id/view2"
+        app:layout_constraintStart_toEndOf="@+id/view3"
+        app:layout_constraintEnd_toStartOf="@id/view5"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:elevation="50dp"
+        android:background="@drawable/icon_add"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/view6"
+        app:layout_constraintStart_toEndOf="@+id/view4"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:elevation="50dp"
+        android:background="@drawable/chat_deselected"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/view7"
+        app:layout_constraintStart_toEndOf="@+id/view5"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:elevation="50dp"
+        android:background="@drawable/account_deselected"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintStart_toEndOf="@+id/view6"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

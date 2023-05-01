@@ -489,7 +489,7 @@
 
         <soup.neumorphism.NeumorphButton
             android:id="@+id/btn_Next"
-            style="@style/Button_Appearance"
+            style="@style/Navigation_Button_Appearance"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="-8dp"
@@ -497,7 +497,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btn_Cancel"
-            app:neumorph_shapeAppearance="@style/Button_Appearance"
+            app:neumorph_shapeAppearance="@style/Navigation_Button_Appearance"
             tools:layout_editor_absoluteY="-9dp"
             />
 
