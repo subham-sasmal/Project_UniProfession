@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentManager
 import soup.neumorphism.NeumorphButton
 
 class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
@@ -26,8 +27,9 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var checkProfessionalFragmentClicked = true
-        var checkStudentFragmentClicked = true
+
+        var studentOrProClicked = 0 //Default state is 0 when neither is clicked. Value 1 denotes a student and value 2 denotes a professional
+        var studentOrProScreen = 0 //This variable defines which fragment the user has selected.Student is 1 and Professional is 2. 0 is when neither of them are clicked.
 
         // Inflate the layout for this fragment
         var v = inflater.inflate(R.layout.fragment_2_1_1_registration_screen_student_or_pro, container,false)
@@ -49,15 +51,15 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
                 btn_Professional.setTextColor(ContextCompat.getColor(context,R.color.bluish_white))
 
                 //call the student editText fragment
-                if(checkStudentFragmentClicked)
+                if(studentOrProClicked == 0 || studentOrProClicked == 1)
                 {
                     parentFragmentManager.beginTransaction().apply {
                         setCustomAnimations(R.anim.slide_in_from_left,R.anim.fade_out)
                         replace(R.id.FragmentHolder_StudentOrPro, Fragment_Student_Entry_Details())
                         commit()
                     }
-                    checkStudentFragmentClicked = false
-                    checkProfessionalFragmentClicked = true
+                    studentOrProClicked = 2 //2 so that it registers only when professional tab is clicked again
+                    studentOrProScreen = 1
                 }
             }
 
@@ -68,25 +70,35 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
                 btn_Student.setTextColor(ContextCompat.getColor(context,R.color.bluish_white))
 
                 //call the professional editText fragment
-                if (checkProfessionalFragmentClicked)
+                if (studentOrProClicked == 0 || studentOrProClicked==2)
                 {
                     parentFragmentManager.beginTransaction().apply {
                         setCustomAnimations(R.anim.slide_in_from_right,R.anim.fade_out)
                         replace(R.id.FragmentHolder_StudentOrPro,Fragment_Professional_Entry_Details())
                         commit()
                     }
-                    checkProfessionalFragmentClicked = false
-                    checkStudentFragmentClicked = true
+                    studentOrProClicked = 1 //1 so that it registers only when student tab is clicked again
+                    studentOrProScreen = 2
                 }
 
             }
 
             btn_next = findViewById(R.id.btn_Next)
             btn_next.setOnClickListener() {
-                parentFragmentManager.beginTransaction().apply {
-                    addToBackStack("Select_Interests")
-                    setCustomAnimations(R.anim.slide_in_from_right,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out_from_left)
-                    replace(R.id.FragmentHolder, Fragment_Student_Interest()).commit()
+                if(studentOrProScreen==1) {
+                    parentFragmentManager.beginTransaction().apply {
+                        addToBackStack("Select_Interests")
+                        setCustomAnimations(R.anim.slide_in_from_right,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out_from_left)
+                        replace(R.id.FragmentHolder, Fragment_Student_Interest()).commit()
+                    }
+                }
+                else if(studentOrProScreen == 2)
+                {
+                    parentFragmentManager.beginTransaction().apply {
+                        addToBackStack("Registration Complete Welcome String")
+                        setCustomAnimations(R.anim.slide_in_from_right,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out_from_left)
+                        replace(R.id.FragmentHolder, Fragment_RegistrationComplete_Welcome()).commit()
+                    }
                 }
             }
 
@@ -99,7 +111,12 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
                 }
             }
         }
-
         return v
     }
+
+
+}
+
+object IncompleteValue{
+    var isIncomplete = 0 //0 default when both are incomplete, 1 is when student is complete and 2 is when professional is complete
 }

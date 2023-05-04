@@ -2,6 +2,7 @@ package com.example.minor_tbd
 
 import android.graphics.Color
 import android.graphics.LinearGradient
+import android.graphics.PixelFormat
 import android.graphics.Shader
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +16,12 @@ class MainActivity : AppCompatActivity() {
             add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
         }
     }
+
+//    override fun onAttachedToWindow() {
+//        super.onAttachedToWindow()
+//        var window = window
+//        window.setFormat(PixelFormat.RGBA_8888)
+//    }
 
     companion object textView_Gradient {
         fun textShader(txtGradient: List<TextView>) {

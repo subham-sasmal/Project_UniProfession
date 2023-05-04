@@ -12,7 +12,7 @@
         <item name="neumorph_backgroundColor">@color/onyx_btn_black</item>
     </style>
 
-    <style name="Action_button_Appearance" parent="Widget.Neumorph.Button">
+    <style name="btn_Search" parent="Widget.Neumorph.Button">
         <item name="neumorph_cornerFamily">rounded</item>
         <item name="neumorph_cornerSize">20dp</item>
         <item name="neumorph_shapeType">flat</item>
@@ -67,19 +67,12 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/lime_green</item>
-        <item name="android:background">@drawable/project_item_cards_techstack_bg</item>
-        <item name="android:paddingStart">10dp</item>
-        <item name="android:paddingEnd">10dp</item>
-        <item name="android:paddingTop">4dp</item>
-        <item name="android:paddingBottom">3dp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_marginEnd">6dp</item>
+
     </style>
 
     <style name="itemCards_tags">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">#979797</item>
-        <item name="fontFamily">@font/poppins_bold</item>
-        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 </resources>

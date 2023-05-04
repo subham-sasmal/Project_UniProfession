@@ -25,12 +25,12 @@ class Fragment_1_GreetingScreen : Fragment() {
 
             heading1 = findViewById(R.id.headingTop_Working)
             clickRegisterNow = findViewById(R.id.tv_clickRegisterNow)
-            loginText = findViewById(R.id.btnLoginText)
+            loginText = findViewById(R.id.btn_BeginText)
 
             var tv_gradient = mutableListOf(heading1,clickRegisterNow,loginText)
             MainActivity.textShader(tv_gradient)
 
-            btnLogin = findViewById(R.id.btnLogin)
+            btnLogin = findViewById(R.id.btn_BeginJourney)
 
             btnLogin.setOnClickListener {
                 parentFragmentManager.beginTransaction().apply {

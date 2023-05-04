@@ -78,13 +78,13 @@
         android:layout_marginBottom="12dp"
         android:hint="Enter password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintBottom_toTopOf="@+id/btn_BeginJourney"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnLogin"
+        android:id="@+id/btn_BeginJourney"
         style="@style/Navigation_Button_Appearance"
         android:layout_width="0dp"
         android:layout_height="78dp"
@@ -103,10 +103,10 @@
         android:text="LOGIN"
         android:textColor="@color/lime_green"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnLogin"
-        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintStart_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_BeginJourney"
+        app:layout_constraintEnd_toEndOf="@+id/btn_BeginJourney"
+        app:layout_constraintStart_toStartOf="@+id/btn_BeginJourney"
+        app:layout_constraintTop_toTopOf="@+id/btn_BeginJourney" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -131,7 +131,7 @@
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_BeginJourney" />
 
         <TextView
             android:id="@+id/tv_clickHereButton"
