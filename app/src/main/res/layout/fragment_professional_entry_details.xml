@@ -45,7 +45,7 @@
         android:id="@+id/et_Experience"
         style="@style/EditText_Appearance"
         android:layout_width="0dp"
-        android:hint="Current Company"
+        android:hint="Experience"
         android:inputType="textPersonName"
         android:layout_marginTop="7dp"
         app:layout_constraintEnd_toEndOf="parent"

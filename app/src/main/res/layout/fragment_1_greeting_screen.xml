@@ -9,7 +9,7 @@
     tools:context=".Fragment_1_GreetingScreen">
 
     <ImageView
-        android:id="@+id/imageView_GreetingVector"
+        android:id="@+id/imageView_WelcomeVector"
         android:layout_width="0dp"
         android:layout_height="300dp"
         android:layout_marginStart="30dp"
@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_GreetingVector" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_WelcomeVector" />
 
     <TextView
         android:id="@+id/headingTop_On"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="@+id/headingTop_Working" />
 
     <TextView
-        android:id="@+id/headingBottom_Something"
+        android:id="@+id/tv_headingWelcomeAboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-15dp"
@@ -69,22 +69,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:fontFamily="@font/poppins_regular"
+        android:fontFamily="@font/poppins_medium"
         android:text="Get Projects reviewed by experts in the\n  Industry and progress in your career! "
         android:textColor="@color/bluish_white"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headingBottom_Something" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_headingWelcomeAboard" />
 
     <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnLogin"
+        android:id="@+id/btn_BeginJourney"
         style="@style/Navigation_Button_Appearance"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_marginStart="-12dp"
         android:layout_marginTop="60dp"
+        android:layout_marginStart="-12dp"
         android:layout_marginEnd="-12dp"
         app:layout_constraintEnd_toEndOf="@+id/tvDescription"
         app:layout_constraintHorizontal_bias="0.0"
@@ -93,7 +93,7 @@
         app:neumorph_shapeAppearance="@style/Navigation_Button_Appearance" />
 
     <TextView
-        android:id="@+id/btnLoginText"
+        android:id="@+id/btn_BeginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGIN"
@@ -101,10 +101,10 @@
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/bluish_white"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/btnLogin"
-        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintStart_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_BeginJourney"
+        app:layout_constraintEnd_toEndOf="@+id/btn_BeginJourney"
+        app:layout_constraintStart_toStartOf="@+id/btn_BeginJourney"
+        app:layout_constraintTop_toTopOf="@+id/btn_BeginJourney" />
 
     <LinearLayout
         android:id="@+id/tvFirstTime_Registration"
@@ -115,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin">
+        app:layout_constraintTop_toBottomOf="@+id/btn_BeginJourney">
 
         <TextView
             android:id="@+id/tV_NewHere"

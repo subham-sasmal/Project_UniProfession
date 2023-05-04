@@ -349,6 +349,16 @@ class Fragment_Student_Interest : Fragment() {
 
                 if(cntr == 0)
                     Toast.makeText(context, "Please select at least 1 interest of your choice", Toast.LENGTH_SHORT).show()
+                else
+                {
+
+                    //Call the welcome screen page
+                    parentFragmentManager.beginTransaction().apply {
+                        addToBackStack("Registration Complete Welcome String")
+                        setCustomAnimations(R.anim.slide_in_from_right,R.anim.slide_out_from_left)
+                        replace(R.id.FragmentHolder, Fragment_RegistrationComplete_Welcome()).commit()
+                    }
+                }
             }
         }
 

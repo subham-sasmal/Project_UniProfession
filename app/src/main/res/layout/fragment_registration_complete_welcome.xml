@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_universal"
+    tools:context=".Fragment_RegistrationComplete_Welcome">
+
+    <ImageView
+        android:id="@+id/imageView_WelcomeVector"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/test_welcome"
+        app:layout_constraintBottom_toTopOf="@+id/tv_headingWelcomeAboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_headingWelcomeAboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:letterSpacing="0.07"
+        android:text="Welcome Aboard!"
+        android:textColor="@color/bluish_white"
+        android:textSize="27sp"
+        tools:textColor="@color/lime_green"
+        app:layout_constraintBottom_toTopOf="@+id/tvDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="You are now ready\nto start the journey"
+        android:textColor="@color/bluish_white"
+        android:textSize="18sp"
+        android:letterSpacing="0.09"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_BeginJourney"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/btn_BeginJourney"
+        style="@style/Navigation_Button_Appearance"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="-12dp"
+        android:layout_marginEnd="-12dp"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_headingWelcomeAboard"
+        app:layout_constraintStart_toStartOf="@+id/tv_headingWelcomeAboard"
+        app:neumorph_shapeAppearance="@style/Navigation_Button_Appearance" />
+
+    <TextView
+        android:id="@+id/btn_BeginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LET'S BEGIN"
+        android:textSize="17sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/bluish_white"
+        android:gravity="center"
+        tools:textColor="@color/lime_green"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_BeginJourney"
+        app:layout_constraintEnd_toEndOf="@+id/btn_BeginJourney"
+        app:layout_constraintStart_toStartOf="@+id/btn_BeginJourney"
+        app:layout_constraintTop_toTopOf="@+id/btn_BeginJourney" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
