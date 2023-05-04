@@ -1,5 +1,7 @@
 package com.example.minor_tbd
 
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -28,6 +30,14 @@ class Fragment_RegistrationComplete_Welcome : Fragment() {
 
             val btnEnterMainFeed = findViewById<NeumorphButton>(R.id.btn_BeginJourney)
             btnEnterMainFeed.setOnClickListener {
+
+                var sharedPreferences:SharedPreferences? = activity?.getSharedPreferences("UserScreenState",MODE_PRIVATE)
+                if(sharedPreferences!=null){
+                    var editor = sharedPreferences.edit()
+                    editor.putInt("isRegistrationLoginDone",1)
+                    editor.apply()
+                }
+
                 //Code to clear the backstack
                 val count = parentFragmentManager.backStackEntryCount
                 for(i in 0 until count)

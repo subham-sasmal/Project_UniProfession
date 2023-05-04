@@ -7,8 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class Fragment_2_1_RegistrationScreen : Fragment() {
 
@@ -20,10 +24,12 @@ class Fragment_2_1_RegistrationScreen : Fragment() {
     lateinit var btn_cancel: Button
 
     lateinit var et_Name: EditText
+    lateinit var et_Surname: EditText
     lateinit var et_Email: EditText
     lateinit var et_Pass: EditText
     lateinit var et_confirmPass: EditText
     lateinit var et_MobNo: EditText
+    lateinit var progressBar: ProgressBar
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,10 +46,17 @@ class Fragment_2_1_RegistrationScreen : Fragment() {
             MainActivity.textShader(tv_gradient)
 
             et_Name = findViewById(R.id.et_Name)
+            et_Surname = findViewById(R.id.et_Surname)
             et_Email = findViewById(R.id.et_EmailAddress)
             et_Pass = findViewById(R.id.et_pass)
             et_confirmPass = findViewById(R.id.et_confirm_pass)
             et_MobNo = findViewById(R.id.et_MobileNumber)
+            progressBar = findViewById(R.id.progressBar)
+            progressBar.setProgress((100/3),true)
+            progressBar.max = 100
+
+
+            var databaseObject = Database.getDatabaseOb(context)
 
             btn_next = findViewById(R.id.btn_Next)
 
@@ -62,6 +75,9 @@ class Fragment_2_1_RegistrationScreen : Fragment() {
                     Toast.makeText(context,"Wrong Password entered",Toast.LENGTH_SHORT).show()
                 else
                 {
+                    GlobalScope.launch(Dispatchers.IO) {
+                        databaseObject.userInfoDao().insertUser(UserInfo(0,et_Name.text.toString(),et_Surname.text.toString(),et_Email.text.toString(),et_Pass.text.toString(),et_MobNo.text.toString()))
+                    }
                     parentFragmentManager.beginTransaction().apply {
                         addToBackStack("Student_or_Pro")
                         setCustomAnimations(R.anim.slide_in_from_right,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out_from_left)
