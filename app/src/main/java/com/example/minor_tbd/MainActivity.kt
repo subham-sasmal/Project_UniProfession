@@ -1,5 +1,6 @@
 package com.example.minor_tbd
 
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.PixelFormat
@@ -12,16 +13,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
+
+        var screenToShow:SharedPreferences = getSharedPreferences("UserScreenState", MODE_PRIVATE)
+        var doneOrNot = screenToShow.getInt("isRegistrationLoginDone",0)
+
+        if (doneOrNot==1)
+        {
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.FragmentHolder,Fragment_MainScreen())
+                commit()
+            }
+        }
+        else
+        {
+            supportFragmentManager.beginTransaction().apply {
+                add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
+            }
         }
     }
-
-//    override fun onAttachedToWindow() {
-//        super.onAttachedToWindow()
-//        var window = window
-//        window.setFormat(PixelFormat.RGBA_8888)
-//    }
 
     companion object textView_Gradient {
         fun textShader(txtGradient: List<TextView>) {

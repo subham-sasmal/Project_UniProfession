@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -51,6 +52,7 @@ class Fragment_Student_Interest : Fragment() {
     private lateinit var nextButton: TextView
     private lateinit var btn_back: Button
     private lateinit var btn_next: NeumorphButton
+    private lateinit var progressBar: ProgressBar
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,6 +62,10 @@ class Fragment_Student_Interest : Fragment() {
 
         v.apply {
             val checkSelectedList = arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+            progressBar = findViewById(R.id.progressBar)
+            progressBar.max = 100
+            progressBar.setProgress(98,true)
 
             interestAndroidAppDev = findViewById(R.id.android_app_dev_layout)
             interestAI = findViewById(R.id.ai_layout)

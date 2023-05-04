@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentManager
@@ -21,6 +22,8 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
     lateinit var btn_Professional: NeumorphButton
     lateinit var btn_cancel: Button
     lateinit var btn_next: NeumorphButton
+    lateinit var progressBar: ProgressBar
+    lateinit var completionTrack: TextView
 
     //Variable to store Button objects
     override fun onCreateView(
@@ -42,9 +45,14 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
 
             btn_Student = findViewById(R.id.btn_Student)
             btn_Professional = findViewById(R.id.btn_Professional)
+            completionTrack = findViewById(R.id.completion_percentage)
+            progressBar = findViewById(R.id.progressBar)
+            progressBar.max = 100
 
             //Following Buttons will execute certain actions on click.
             btn_Student.setOnClickListener {
+                progressBar.setProgress((200/3),true)
+                completionTrack.text = "2/3"
                 btn_Student.setShapeType(1) //1 stands for pressed state of the button. 0 is flat and 2 is basin
                 btn_Student.setTextColor(ContextCompat.getColor(context, R.color.gradient_green))
                 btn_Professional.setShapeType(0)
@@ -64,6 +72,8 @@ class Fragment_2_1_1_RegistrationScreen_StudentOrPro : Fragment() {
             }
 
             btn_Professional.setOnClickListener {
+                progressBar.setProgress((98),true)
+                completionTrack.text = "3/3..Almost Done"
                 btn_Professional.setShapeType(1)
                 btn_Professional.setTextColor(Color.parseColor("#BDFC8A"))
                 btn_Student.setShapeType(0)
