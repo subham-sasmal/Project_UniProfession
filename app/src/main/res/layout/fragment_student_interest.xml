@@ -131,10 +131,10 @@
             android:id="@+id/ai_layout"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bg_interest_tag_unselected"
-            android:layout_marginStart="7dp"
-            app:layout_constraintStart_toEndOf="@+id/android_app_dev_layout"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/android_app_dev_layout">
 
             <TextView
                 android:id="@+id/tv_interest_ai"
@@ -165,16 +165,17 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cloudComputing_layout"
+            android:id="@+id/cloud_computing_layout"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:layout_marginStart="7dp"
             android:background="@drawable/bg_interest_tag_unselected"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ai_layout"
             app:layout_constraintTop_toBottomOf="@+id/android_app_dev_layout">
 
             <TextView
-                android:id="@+id/tv_interest_cloudComputing"
+                android:id="@+id/tv_interest_cloudcomputing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
@@ -186,49 +187,11 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cloud_radio_button"
+                app:layout_constraintStart_toEndOf="@+id/cloudComputing_radio_button"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
-                android:id="@+id/cloud_radio_button"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="6dp"
-                android:background="@drawable/interest_normal_state_icon"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/devOps_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="7dp"
-            android:background="@drawable/bg_interest_tag_unselected"
-            app:layout_constraintStart_toEndOf="@+id/cloudComputing_layout"
-            app:layout_constraintTop_toBottomOf="@+id/ai_layout">
-
-            <TextView
-                android:id="@+id/tv_interest_devops"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="10dp"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:paddingTop="3dp"
-                android:text="DevOps"
-                android:textColor="@color/interest_default_state_color"
-                android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/devops_radio_button"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <View
-                android:id="@+id/devops_radio_button"
+                android:id="@+id/cloudComputing_radio_button"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="6dp"
@@ -246,7 +209,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/bg_interest_tag_unselected"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cloudComputing_layout">
+            app:layout_constraintTop_toBottomOf="@+id/ai_layout">
 
             <TextView
                 android:id="@+id/tv_interest_dataScience"
@@ -277,14 +240,51 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/dataAnalytics_layout"
+            android:id="@+id/devOps_layout"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:layout_marginStart="7dp"
             android:background="@drawable/bg_interest_tag_unselected"
-            app:layout_constraintStart_toEndOf="@+id/dataScience_layout"
-            app:layout_constraintTop_toBottomOf="@+id/devOps_layout" >
+            app:layout_constraintStart_toEndOf="@id/dataScience_layout"
+            app:layout_constraintTop_toBottomOf="@+id/ai_layout">
+
+            <TextView
+                android:id="@+id/tv_interest_devOps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:paddingTop="3dp"
+                android:text="DevOps"
+                android:textColor="@color/interest_default_state_color"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/devOps_radio_button"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/devOps_radio_button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/interest_normal_state_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dataAnalytics_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_interest_tag_unselected"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dataScience_layout">
 
             <TextView
                 android:id="@+id/tv_interest_dataAnalytics"
@@ -315,13 +315,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/game_dev_layout"
+            android:id="@+id/gameDev_layout"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:layout_marginStart="7dp"
             android:background="@drawable/bg_interest_tag_unselected"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dataScience_layout" >
+            app:layout_constraintStart_toEndOf="@id/dataAnalytics_layout"
+            app:layout_constraintTop_toBottomOf="@+id/dataScience_layout">
 
             <TextView
                 android:id="@+id/tv_interest_gameDev"
@@ -352,17 +353,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ml_layout"
+            android:id="@+id/machineLearning_layout"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="7dp"
             android:background="@drawable/bg_interest_tag_unselected"
-            app:layout_constraintStart_toEndOf="@id/game_dev_layout"
-            app:layout_constraintTop_toBottomOf="@+id/dataScience_layout" >
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dataAnalytics_layout">
 
             <TextView
-                android:id="@+id/tv_interest_ml"
+                android:id="@+id/tv_interest_machineLearning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
@@ -374,11 +374,11 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ml_radio_button"
+                app:layout_constraintStart_toEndOf="@+id/machineLearning_radio_button"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
-                android:id="@+id/ml_radio_button"
+                android:id="@+id/machineLearning_radio_button"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="6dp"
@@ -394,9 +394,10 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:layout_marginStart="7dp"
             android:background="@drawable/bg_interest_tag_unselected"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/game_dev_layout" >
+            app:layout_constraintStart_toEndOf="@id/machineLearning_layout"
+            app:layout_constraintTop_toBottomOf="@+id/dataAnalytics_layout">
 
             <TextView
                 android:id="@+id/tv_interest_nlp"
@@ -406,7 +407,7 @@
                 android:layout_marginEnd="10dp"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:paddingTop="3dp"
-                android:text="Natural Language Processing"
+                android:text="NLP"
                 android:textColor="@color/interest_default_state_color"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -427,16 +428,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/web_dev_layout"
+            android:id="@+id/webDev_layout"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/bg_interest_tag_unselected"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nlp_layout" >
+            app:layout_constraintTop_toBottomOf="@+id/machineLearning_layout">
 
             <TextView
-                android:id="@+id/tv_interest_web_dev"
+                android:id="@+id/tv_interest_webDev"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
@@ -448,11 +449,11 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/web_dev_radio_button"
+                app:layout_constraintStart_toEndOf="@+id/webDev_radio_button"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
-                android:id="@+id/web_dev_radio_button"
+                android:id="@+id/webDev_radio_button"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="6dp"
@@ -462,7 +463,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
