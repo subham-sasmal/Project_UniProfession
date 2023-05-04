@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 class Fragment_MainScreen : Fragment() {
-    lateinit var chatscreen: View
-
      override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -20,22 +18,11 @@ class Fragment_MainScreen : Fragment() {
              val appName = findViewById<TextView>(R.id.tv_AppName)
              val textGradient = listOf<TextView>(appName)
              MainActivity.textShader(textGradient)
-             
-             chatscreen = findViewById(R.id.btn_ChatTab)
-
-             chatscreen.setOnClickListener() {
-                 parentFragmentManager.beginTransaction().apply {
-                     addToBackStack("Chat screen")
-                     setCustomAnimations(R.anim.slide_in_from_right,R.anim.fade_out,R.anim.fade_in,R.anim.slide_out_from_left)
-                     replace(R.id.frameLayout, Fragment_Chat_Screen()).commit()
-                 }
-             }
          }
          parentFragmentManager.beginTransaction().apply {
              replace(R.id.frameLayout,Fragment_Feed())
              commit()
          }
-
          return v
     }
 
