@@ -1,7 +1,9 @@
 package com.example.minor_tbd
 
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.LinearGradient
+import android.graphics.PixelFormat
 import android.graphics.Shader
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,8 +13,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
+
+        var screenToShow:SharedPreferences = getSharedPreferences("UserScreenState", MODE_PRIVATE)
+        var doneOrNot = screenToShow.getInt("isRegistrationLoginDone",0)
+
+        if (doneOrNot==1)
+        {
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.FragmentHolder,Fragment_MainScreen())
+                commit()
+            }
+        }
+        else
+        {
+            supportFragmentManager.beginTransaction().apply {
+                add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
+            }
         }
     }
 

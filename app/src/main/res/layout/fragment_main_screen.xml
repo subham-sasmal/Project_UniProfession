@@ -10,18 +10,17 @@
 
 
     <View
-        android:id="@+id/pro_or_student_selected_color"
+        android:id="@+id/view_topBarBg"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:background="@drawable/main_feed_top_bar_bg"
-        android:elevation="50dp"
         android:outlineSpotShadowColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_AppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -29,59 +28,57 @@
         android:fontFamily="@font/poppins_bold"
         android:text="@string/app_name"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/pro_or_student_selected_color"
+        app:layout_constraintBottom_toBottomOf="@+id/view_topBarBg"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/pro_or_student_selected_color"
+        app:layout_constraintTop_toTopOf="@+id/view_topBarBg"
         tools:textColor="@color/lime_green" />
 
     <soup.neumorphism.NeumorphImageButton
-        style="@style/Action_button_Appearance"
+        style="@style/btn_Search"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginEnd="-8dp"
         android:elevation="50dp"
         android:scaleType="center"
         android:src="@drawable/search_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/pro_or_student_selected_color"
-        app:layout_constraintEnd_toStartOf="@+id/neumorphButton"
-        app:layout_constraintTop_toTopOf="@+id/pro_or_student_selected_color" />
+        app:layout_constraintBottom_toBottomOf="@+id/view_topBarBg"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Notifications"
+        app:layout_constraintTop_toTopOf="@+id/view_topBarBg" />
 
     <soup.neumorphism.NeumorphImageButton
-        android:id="@+id/neumorphButton"
-        style="@style/Action_button_Appearance"
+        android:id="@+id/btn_Notifications"
+        style="@style/btn_Search"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginEnd="8dp"
         android:elevation="50dp"
         android:scaleType="center"
         android:src="@drawable/notification_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/pro_or_student_selected_color"
+        app:layout_constraintBottom_toBottomOf="@+id/view_topBarBg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/pro_or_student_selected_color" />
+        app:layout_constraintTop_toTopOf="@+id/view_topBarBg" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@id/view2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pro_or_student_selected_color" />
-
+        app:layout_constraintTop_toBottomOf="@+id/view_topBarBg" />
 
     <View
         android:id="@+id/view2"
         android:layout_width="0dp"
         android:layout_height="75dp"
         android:background="@drawable/bottom_navbar_bg"
-        android:elevation="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/btn_HomeTab"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:elevation="50dp"
@@ -89,25 +86,25 @@
         app:layout_constraintTop_toTopOf="@+id/view2"
         app:layout_constraintBottom_toBottomOf="@id/view2"
         app:layout_constraintStart_toStartOf="@id/view2"
-        app:layout_constraintEnd_toStartOf="@id/view4"
+        app:layout_constraintEnd_toStartOf="@id/btn_Leaderboard"
         app:layout_constraintHorizontal_bias="0.5"
         />
 
     <View
-        android:id="@+id/view4"
+        android:id="@+id/btn_Leaderboard"
         android:layout_width="35dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:elevation="50dp"
-        android:background="@drawable/leaderboard_deselected"
+        android:background="@drawable/leaderboard"
         app:layout_constraintTop_toTopOf="@+id/view2"
         app:layout_constraintBottom_toBottomOf="@id/view2"
-        app:layout_constraintStart_toEndOf="@+id/view3"
-        app:layout_constraintEnd_toStartOf="@id/view5"
+        app:layout_constraintStart_toEndOf="@+id/btn_HomeTab"
+        app:layout_constraintEnd_toStartOf="@id/btn_AddProject"
         app:layout_constraintHorizontal_bias="0.5"
         />
 
     <View
-        android:id="@+id/view5"
+        android:id="@+id/btn_AddProject"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:elevation="50dp"
@@ -115,9 +112,8 @@
         app:layout_constraintTop_toTopOf="@+id/view2"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toStartOf="@+id/btn_ChatTab"
-        app:layout_constraintStart_toEndOf="@+id/view4"
-        app:layout_constraintHorizontal_bias="0.5"
-        />
+        app:layout_constraintStart_toEndOf="@+id/btn_Leaderboard"
+        app:layout_constraintHorizontal_bias="0.5 />
 
     <View
         android:id="@+id/btn_ChatTab"
@@ -127,14 +123,14 @@
         android:background="@drawable/chat_deselected"
         app:layout_constraintTop_toTopOf="@+id/view2"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
-        app:layout_constraintEnd_toStartOf="@+id/view7"
-        app:layout_constraintStart_toEndOf="@+id/view5"
+        app:layout_constraintEnd_toStartOf="@+id/btn_ProfileTab"
+        app:layout_constraintStart_toEndOf="@+id/btn_AddProject"
         app:layout_constraintHorizontal_bias="0.5"
         />
 
 
     <View
-        android:id="@+id/view7"
+        android:id="@+id/btn_ProfileTab"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:elevation="50dp"

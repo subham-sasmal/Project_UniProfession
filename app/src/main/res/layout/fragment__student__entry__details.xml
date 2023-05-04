@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner_student_courses" />
 
     <EditText
-        android:id="@+id/et_student_passingyear"
+        android:id="@+id/et_student_passingYear"
         style="@style/EditText_Appearance"
         android:layout_marginTop="7dp"
         android:hint="Year Of Passing"
@@ -63,9 +63,9 @@
         android:gravity="center_vertical"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_student_passingyear" />
+        app:layout_constraintTop_toBottomOf="@+id/et_student_passingYear" />
 
-    <TextView
+    <View
         android:id="@+id/image_calendar"
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -73,7 +73,7 @@
         android:background="@drawable/image_calendar"
         app:layout_constraintBottom_toBottomOf="@+id/tv_student_dob"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_student_passingyear" />
+        app:layout_constraintTop_toBottomOf="@+id/et_student_passingYear" />
 
     <View
         android:id="@+id/viewdropdown1"

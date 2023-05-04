@@ -3,7 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="420dp"
+    android:layout_height="380dp"
+    android:layout_marginTop = "15dp"
+    android:layout_marginStart="15sp"
+    android:layout_marginEnd="15dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="40dp"
     android:background="@drawable/project_item_cards_bg">
@@ -15,7 +18,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/profile1"
+        android:src="@drawable/profile_placeholder2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/rounded_image_view" />
@@ -60,10 +63,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/web_dev"
+        android:src="@drawable/placeholder_image4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,11 +98,11 @@
 
         <TextView
             android:id="@+id/tv_projectDescription"
-            android:layout_width="310dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="-10dp"
             android:fontFamily="@font/poppins_semi_bold"
-            android:text="An e-commerce website that for selling sports goods"
+            android:text="An e-commerce website specialising in selling sports goods"
             android:textColor="@color/bluish_white"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/tv_projectTitle"
@@ -108,27 +111,14 @@
 
         <LinearLayout
             android:id="@+id/linearLayout_TagHolder"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-3dp"
             android:layout_marginStart="12dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="-3dp"
             android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/tv_projectDescription"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_projectDescription">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="#MERN"
-                style="@style/itemCards_tags"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="#Web Development"
-                style="@style/itemCards_tags"
-                />
         </LinearLayout>
 
         <View
@@ -140,58 +130,36 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout_TagHolder"
             tools:layout_editor_absoluteX="12dp" />
 
-        <ScrollView
+        <HorizontalScrollView
             android:id="@+id/scrollView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginBottom="10dp"
+            android:layout_marginEnd="8dp"
+            android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/viewPager"
+            app:layout_constraintEnd_toStartOf="@+id/btn_info"
             app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:id="@+id/linearLayout_TechStackHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
-                <TextView
-                    style="@style/techStack_bg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mongo DB" />
-
-                <TextView
-                    style="@style/techStack_bg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Express" />
-
-                <TextView
-                    style="@style/techStack_bg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="React" />
-
-                <TextView
-                    style="@style/techStack_bg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Node" />
             </LinearLayout>
 
-        </ScrollView>
+        </HorizontalScrollView>
 
 
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
+        <View
+            android:id="@+id/btn_info"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_marginEnd="27dp"
+            android:elevation="2dp"
             android:background="@drawable/info"
             app:layout_constraintBottom_toBottomOf="@id/scrollView"
             app:layout_constraintEnd_toEndOf="parent"
