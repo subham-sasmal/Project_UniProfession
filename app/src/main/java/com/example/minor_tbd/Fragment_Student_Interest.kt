@@ -63,36 +63,36 @@ class Fragment_Student_Interest : Fragment() {
 
             interestAndroidAppDev = findViewById(R.id.android_app_dev_layout)
             interestAI = findViewById(R.id.ai_layout)
-            interestCloudComputing = findViewById(R.id.cloudComputing_layout)
+            interestCloudComputing = findViewById(R.id.cloud_computing_layout)
             interestDevOps = findViewById(R.id.devOps_layout)
             interestDataScience = findViewById(R.id.dataScience_layout)
             interestDataAnalytics = findViewById(R.id.dataAnalytics_layout)
-            interestGameDev = findViewById(R.id.game_dev_layout)
-            interestMachineLearning = findViewById(R.id.ml_layout)
+            interestGameDev = findViewById(R.id.gameDev_layout)
+            interestMachineLearning = findViewById(R.id.machineLearning_layout)
             interestNLP = findViewById(R.id.nlp_layout)
-            interestWebDev = findViewById(R.id.web_dev_layout)
+            interestWebDev = findViewById(R.id.webDev_layout)
 
             textAndroidAppDev = findViewById(R.id.tv_interest_android_app_dev)
             textAI = findViewById(R.id.tv_interest_ai)
-            textCloudComputing = findViewById(R.id.tv_interest_cloudComputing)
-            textDevOps = findViewById(R.id.tv_interest_devops)
+            textCloudComputing = findViewById(R.id.tv_interest_cloudcomputing)
+            textDevOps = findViewById(R.id.tv_interest_devOps)
             textDataScience = findViewById(R.id.tv_interest_dataScience)
             textDataAnalytics = findViewById(R.id.tv_interest_dataAnalytics)
             textGameDev = findViewById(R.id.tv_interest_gameDev)
-            textMachineLearning = findViewById(R.id.tv_interest_ml)
+            textMachineLearning = findViewById(R.id.tv_interest_machineLearning)
             textNLP = findViewById(R.id.tv_interest_nlp)
-            textWebDev = findViewById(R.id.tv_interest_web_dev)
+            textWebDev = findViewById(R.id.tv_interest_webDev)
 
             checkButtonAndroidAppDev = findViewById(R.id.andoid_app_dev_radio_button)
             checkButtonAI = findViewById(R.id.ai_radio_button)
-            checkButtonCloudComputing = findViewById(R.id.cloud_radio_button)
-            checkButtonDevOps = findViewById(R.id.devops_radio_button)
+            checkButtonCloudComputing = findViewById(R.id.cloudComputing_radio_button)
+            checkButtonDevOps = findViewById(R.id.devOps_radio_button)
             checkButtonDataScience = findViewById(R.id.dataScience_radio_button)
             checkButtonDataAnalytics = findViewById(R.id.dataAnalytics_radio_button)
             checkButtonGameDev = findViewById(R.id.gameDev_radio_button)
-            checkButtonMachineLearning = findViewById(R.id.ml_radio_button)
+            checkButtonMachineLearning = findViewById(R.id.machineLearning_radio_button)
             checkButtonNLP = findViewById(R.id.nlp_radio_button)
-            checkButtonWebDev = findViewById(R.id.web_dev_radio_button)
+            checkButtonWebDev = findViewById(R.id.webDev_radio_button)
 
             interestButton = findViewById(R.id.tvHeading_Interests)
             nextButton = findViewById(R.id.tv_btnNxt)
@@ -349,6 +349,12 @@ class Fragment_Student_Interest : Fragment() {
 
                 if(cntr == 0)
                     Toast.makeText(context, "Please select at least 1 interest of your choice", Toast.LENGTH_SHORT).show()
+                else {
+                    parentFragmentManager.beginTransaction().apply {
+                        addToBackStack("Main Screen Loaded")
+                        replace(R.id.FragmentHolder, Fragment_MainScreen()).commit()
+                    }
+                }
             }
         }
 

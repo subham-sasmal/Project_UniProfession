@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +10,7 @@
 
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/pro_or_student_selected_color"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:background="@drawable/main_feed_top_bar_bg"
@@ -28,9 +29,9 @@
         android:fontFamily="@font/poppins_bold"
         android:text="@string/app_name"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/pro_or_student_selected_color"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/pro_or_student_selected_color"
         tools:textColor="@color/lime_green" />
 
     <soup.neumorphism.NeumorphImageButton
@@ -41,9 +42,9 @@
         android:elevation="50dp"
         android:scaleType="center"
         android:src="@drawable/search_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/pro_or_student_selected_color"
         app:layout_constraintEnd_toStartOf="@+id/neumorphButton"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintTop_toTopOf="@+id/pro_or_student_selected_color" />
 
     <soup.neumorphism.NeumorphImageButton
         android:id="@+id/neumorphButton"
@@ -54,9 +55,9 @@
         android:elevation="50dp"
         android:scaleType="center"
         android:src="@drawable/notification_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/pro_or_student_selected_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintTop_toTopOf="@+id/pro_or_student_selected_color" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -66,7 +67,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/pro_or_student_selected_color" />
 
 
     <View
@@ -113,13 +114,13 @@
         android:background="@drawable/icon_add"
         app:layout_constraintTop_toTopOf="@+id/view2"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
-        app:layout_constraintEnd_toStartOf="@+id/view6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_ChatTab"
         app:layout_constraintStart_toEndOf="@+id/view4"
         app:layout_constraintHorizontal_bias="0.5"
         />
 
     <View
-        android:id="@+id/view6"
+        android:id="@+id/btn_ChatTab"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:elevation="50dp"
@@ -141,7 +142,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintStart_toEndOf="@+id/view6"
+        app:layout_constraintStart_toEndOf="@+id/btn_ChatTab"
         app:layout_constraintHorizontal_bias="0.5"
         />
 

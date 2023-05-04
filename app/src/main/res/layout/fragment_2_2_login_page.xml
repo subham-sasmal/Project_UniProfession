@@ -44,8 +44,8 @@
         android:text="LOGIN"
         android:textColor="@color/lime_green"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2" />
+        app:layout_constraintBottom_toTopOf="@+id/et_email_id"
+        app:layout_constraintStart_toStartOf="@+id/et_email_id" />
 
     <TextView
         android:id="@+id/texView_resume_journey"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_Login" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/et_email_id"
         android:layout_width="0dp"
         style="@style/EditText_Appearance"
         android:layout_marginBottom="7dp"

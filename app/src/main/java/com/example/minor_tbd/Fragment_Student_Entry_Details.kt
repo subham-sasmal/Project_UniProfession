@@ -35,7 +35,6 @@ class Fragment_Student_Entry_Details : Fragment() {
         v.apply {
 
             dob = findViewById<TextView>(R.id.tv_student_dob)
-            spinnerStudentCourses = findViewById<Spinner>(R.id.spinner_student_courses)
 
             val coursesAdapter = SpinnerHintAdapter(context, R.layout.spinner_selected_text_bg, courses_list)
             coursesAdapter.setDropDownViewResource(R.layout.spinner_dropdown_bg)
