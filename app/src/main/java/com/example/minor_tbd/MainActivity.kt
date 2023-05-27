@@ -8,31 +8,25 @@ import android.graphics.Shader
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        var screenToShow:SharedPreferences = getSharedPreferences("UserScreenState", MODE_PRIVATE)
-//        var doneOrNot = screenToShow.getInt("isRegistrationLoginDone",0)
-//
-//        if (doneOrNot==1)
-//        {
-//            supportFragmentManager.beginTransaction().apply {
-//                replace(R.id.FragmentHolder,Fragment_MainScreen())
-//                commit()
-//            }
-//        }
-//        else
-//        {
-//            supportFragmentManager.beginTransaction().apply {
-//                add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
-//            }
-//        }
+        auth = FirebaseAuth.getInstance()
 
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
+        if (auth.currentUser != null) {
+            supportFragmentManager.beginTransaction().apply {
+                add(R.id.FragmentHolder, Fragment_MainScreen()).commit()
+            }
+        } else {
+            supportFragmentManager.beginTransaction().apply {
+                add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
+            }
         }
     }
 
