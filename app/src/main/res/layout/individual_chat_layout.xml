@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/individual_chat_dialogue"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/individual_chat_background"
+    android:elevation="50dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <View
+        android:id="@+id/pro_or_student_selected_color"
+        android:layout_width="6dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/student_selected_color_scheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageview_profile_photo"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="7dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_pic_zerotwo"
+        app:layout_constraintStart_toEndOf="@+id/pro_or_student_selected_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/rounded_image_view" />
+
+    <TextView
+        android:id="@+id/tv_contact_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Yuito Sumeragi"
+        android:textColor="@color/bluish_white"
+        android:textSize="23dp"
+        app:layout_constraintStart_toEndOf="@+id/imageview_profile_photo"
+        app:layout_constraintTop_toTopOf="@+id/imageview_profile_photo" />
+
+    <View
+        android:id="@+id/message_sent"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/message_sent"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_message_content"
+        app:layout_constraintStart_toEndOf="@+id/imageview_profile_photo"
+        app:layout_constraintTop_toTopOf="@+id/tv_message_content" />
+
+    <TextView
+        android:id="@+id/tv_message_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Yume-O akiramete shinde kure..."
+        android:textColor="@color/bluish_white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageview_profile_photo"
+        app:layout_constraintStart_toEndOf="@+id/message_sent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_contact_name" />
+
+    <TextView
+        android:id="@+id/studentOrPro_Tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/student_or_pro_tag_background"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingStart="8dp"
+        android:paddingTop="1dp"
+        android:paddingEnd="8dp"
+        android:text="Student"
+        android:textColor="#83F5DE"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_contact_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_contact_name" />
+
+    <View
+        android:id="@+id/divider_line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/project_item_card_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pro_or_student_selected_color"
+        app:layout_constraintTop_toBottomOf="@+id/imageview_profile_photo" />
+
+    <TextView
+        android:id="@+id/tv_main_domain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/bg_interest_tag_selected"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Android App Development"
+        android:textColor="@color/lime_green"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pro_or_student_selected_color"
+        app:layout_constraintTop_toBottomOf="@+id/divider_line" />
+
+    <TextView
+        android:id="@+id/tv_time_or_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="29/04/2022"
+        android:textColor="@color/bluish_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_line" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
