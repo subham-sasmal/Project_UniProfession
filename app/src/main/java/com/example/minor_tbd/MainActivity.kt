@@ -14,21 +14,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var screenToShow:SharedPreferences = getSharedPreferences("UserScreenState", MODE_PRIVATE)
-        var doneOrNot = screenToShow.getInt("isRegistrationLoginDone",0)
+//        var screenToShow:SharedPreferences = getSharedPreferences("UserScreenState", MODE_PRIVATE)
+//        var doneOrNot = screenToShow.getInt("isRegistrationLoginDone",0)
+//
+//        if (doneOrNot==1)
+//        {
+//            supportFragmentManager.beginTransaction().apply {
+//                replace(R.id.FragmentHolder,Fragment_MainScreen())
+//                commit()
+//            }
+//        }
+//        else
+//        {
+//            supportFragmentManager.beginTransaction().apply {
+//                add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
+//            }
+//        }
 
-        if (doneOrNot==1)
-        {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.FragmentHolder,Fragment_MainScreen())
-                commit()
-            }
-        }
-        else
-        {
-            supportFragmentManager.beginTransaction().apply {
-                add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
-            }
+        supportFragmentManager.beginTransaction().apply {
+            add(R.id.FragmentHolder, Fragment_1_GreetingScreen()).commit()
         }
     }
 
